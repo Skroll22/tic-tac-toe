@@ -1,8 +1,9 @@
 def make_move(status, x, y):
     # Проверка возможности хода
-    if status["board"][x][y] != " ":
+    if status["board"][x-1][y-1] != " ":
+        print("Клетка занята!")
         return False # Ячейка занята
-    status["board"][x][y] = status["current_player"]
+    status["board"][x-1][y-1] = status["current_player"]
     return True # Ход выполнен успешно
 
 def check_win(board):
